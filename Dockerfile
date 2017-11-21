@@ -7,4 +7,5 @@ RUN cd /root && wget https://github.com/twitter/twemproxy/archive/${VERSION}.tar
 RUN autoreconf -fvi && ./configure --prefix=/usr && make -j4 && make install
 VOLUME /scripts
 COPY start.sh /scripts/start.sh
+RUN chmod 755 /scripts/start.sh
 CMD ["/scripts/start.sh"]
